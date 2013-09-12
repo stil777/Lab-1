@@ -2,6 +2,7 @@
 #include "Lab1_2.h"
 #include <string>
 #include <conio.h>
+#include <iostream>
 
 void Student::put_name(std::string student_name)
 {
@@ -43,8 +44,28 @@ float Student::get_average_ball()
 int main()
 {
     Student *student1 = new Student(0);
-    delete student1;
-
+	std::string name;
+    std::string last_name;
+	printf("Name: ");
+    getline (std::cin, name);
+    std::cout << "Last name: ";
+    getline(std::cin, last_name);
+	student1->put_name(name);
+    student1->put_last_name(last_name);
+	int scores[5];
+	int sum = 0;
+	for (int i = 0; i < 5; ++i) {
+        std::cout << "Score " << i+1 << ": ";
+        std::cin >> scores[i];
+		sum += scores[i];
+	}
+	student1->put_scores(scores);
+	float average_ball = sum / 5.0;
+    student1->put_average_ball(average_ball);
+    std::cout << "Average ball for " << student1->get_name() << " "
+         << student1->get_last_name() << " is "
+         << student1->get_average_ball() << std::endl;
+	delete student1;
 	getch();
     return 0;
 }
