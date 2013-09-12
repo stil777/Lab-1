@@ -1,15 +1,13 @@
 #include "StdAfx.h"
 #include "Lab1_2.h"
+#include <string>
 
-Lab1_2::Lab1_2(void)
+void Students::set_name(std::string student_name)
 {
+    Students::name = student_name;
 }
 
-Lab1_2::~Lab1_2(void)
+std::string Students::get_name()
 {
-}
-
-SomeMethod()
-{
-	SomeField = 0;
+    return Students::name;
 }
