@@ -5,8 +5,16 @@
 class Student
 {
 public:
-	Student(void);
+	Student(int default_score)
+        {
+            for (int i = 0; i < 5; ++i) {
+                scores[i] = default_score;
+            }
+        }
 	~Student(void);
+	{
+		std::cout << "The work is over, memory cleaned succesfuly." << std::endl;
+	}
 	void put_name(std::string); //Установка имени студента
         std::string get_name(); //Получение имени студента
         void put_last_name(std::string); //Установка фамилии студента
