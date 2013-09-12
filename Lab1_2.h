@@ -1,5 +1,7 @@
 #pragma once
 
+#include <string>
+
 class Student
 {
 public:
@@ -12,4 +14,9 @@ public:
         void put_scores(int []); //Установка промежуточных оценок
         void set_average_ball(float); //Установка среднего балла
         float get_average_ball(); //Получение среднего балла
+private:
+        int scores[5]; // Промежуточные оценки
+        float average_ball; // Средний балл
+        std::string name; // Имя
+        std::string last_name; // Фамилия
 };
