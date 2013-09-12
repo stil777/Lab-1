@@ -11,7 +11,7 @@ public:
                 scores[i] = default_score;
             }
         }
-	~Student(void);
+	~Student(void)
 	{
 		std::cout << "The work is over, memory cleaned succesfuly." << std::endl;
 	}
